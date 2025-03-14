@@ -57,7 +57,7 @@ p {
 
 .container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 5fr;
   grid-template-rows: auto auto;
   grid-template-areas:
   "sidebar header"
@@ -84,15 +84,19 @@ p {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   padding: 15px;
+
+  width: 100%;
+  box-sizing: border-box;
 }
 
 
 
 .projectcontainer {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-rows: auto;
   gap: 15px;
+  width: 100%;
 }
 
 .sidebar {
@@ -103,9 +107,8 @@ p {
   display: grid;
   grid-column: 1 / 2;
   grid-template-rows: auto auto auto auto 1fr;
-  gap: 10px;
+  gap: 30px;
   padding: 20px;
-  height: 100vh;
   min-width: 200px;
   max-width: 250px;
 }
@@ -118,14 +121,14 @@ p {
 
 .nav, .settings {
   display: grid;
-  gap: 10px; /* Ensures uniform spacing */
+  gap: 10px;
 }
 
 .nav li, .settings li {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 8px; /* Space between icon and text */
+  gap: 8px;
   padding: 8px;
   cursor: pointer;
   border-radius: 5px;
@@ -192,6 +195,7 @@ ul {
   border-left-style: solid;
   padding: 15px;
   box-shadow: 2px 2px 1px 1px rgb(219, 219, 219);
+  width: 100%;
 }
 
 .project p {
@@ -199,12 +203,12 @@ ul {
 }
 
 .project img {
-  width: 20px; /* Adjust size as needed */
+  width: 20px; 
   height: auto;
   display: inline-block;
   align-content: end;
-  margin-right: 5px; /* Adds spacing between icons */
-  vertical-align: middle; /* Ensures they align properly with text */
+  margin-right: 5px;
+  vertical-align: middle; 
 }
 
 .icon-container {
@@ -235,15 +239,13 @@ ul img {
 }
 
 .searchbar img {
-  height: 1em; /* Matches the font size */
-  width: auto;  /* Maintains aspect ratio */
-  vertical-align: middle; /* Aligns with text */
+  height: 1em;
+  width: auto;
 }
 
 .profile img {
-    height: 1em; /* Matches the font size */
-  width: auto;  /* Maintains aspect ratio */
-  vertical-align: middle; /* Aligns with text */
+  height: 1em;
+  width: auto;
 }
 
 .searchbar {
