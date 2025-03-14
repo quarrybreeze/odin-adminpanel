@@ -57,7 +57,7 @@ p {
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   grid-template-areas:
   "sidebar header"
@@ -87,6 +87,7 @@ p {
 
   width: 100%;
   box-sizing: border-box;
+  align-self:start;
 }
 
 
@@ -162,18 +163,26 @@ ul {
 
 .trendcontainer {
   background-color: white;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
   border-radius: 10px;
-  box-shadow: 2px 2px 1px 1px rgb(219, 219, 219);
+  box-shadow: 1.9px 3.8px 3.8px hsl(0deg 0% 0% / 0.44);
 }
 
 .trend {
   padding: 15px;
+  display: grid;
+
+  grid-template-areas:
+  "profilepic handle"
+  "profilepic headline"
 }
 
 .announcementcontainer {
   background-color: white;
   border-radius: 10px;
-  box-shadow: 2px 2px 1px 1px rgb(219, 219, 219);
+  box-shadow: 1.9px 3.8px 3.8px hsl(0deg 0% 0% / 0.44);
 }
 
 .announcement {
@@ -194,7 +203,7 @@ ul {
   border-left-color: orange;
   border-left-style: solid;
   padding: 15px;
-  box-shadow: 2px 2px 1px 1px rgb(219, 219, 219);
+  box-shadow: 1.9px 3.8px 3.8px hsl(0deg 0% 0% / 0.44);
   width: 100%;
 }
 
@@ -228,7 +237,7 @@ input {
   background-color: rgb(237, 242, 252);
   border-radius: 20px;
   border: none;
-  height: 1em;
+  height: 1.5em;
 }
 
 ul img {
@@ -239,28 +248,49 @@ ul img {
 }
 
 .searchbar img {
-  height: 1em;
+  height: 1.5em;
   width: auto;
 }
 
 .profile img {
-  height: 1em;
+  height: 1.5em;
   width: auto;
+  align-self: center;
+}
+
+.profilepicture img {
+  height: 3.3em;
+  width: auto;
+  align-self: center;
+  margin: 0px 10px 0px 0px;
+}
+
+.trend img {
+  height: 3.3em;
+  width: auto;
+  align-self: center;
+  margin: auto auto auto auto;
 }
 
 .searchbar {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 10px;
+  align-self: center;
 }
 
 .profile {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
   gap: 10px;
   justify-items: end;
   font-weight: bold;
   vertical-align: middle;
+}
+
+.profile p {
+  align-self: center;
+  margin: 0px 15px 0px 0px;
 }
 
 .topheader {
@@ -272,10 +302,10 @@ ul img {
 
 .bottomheader {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: auto 2fr 1fr;
   grid-template-rows: auto;
   vertical-align: middle;
-  padding: 0px 0px 0px 30px;
+  padding: 20px 0px 0px 30px;
 }
 
 .bottomheader p {
@@ -284,4 +314,20 @@ ul img {
 
 .bottomheader h2 {
   margin: 0px;
+}
+
+.trend img {
+  grid-area: profilepic;
+}
+
+.trend h4 {
+  grid-area: handle;
+}
+
+.trend p {
+  grid-area: headline;
+}
+
+.actions {
+  justify-self: end;
 }
