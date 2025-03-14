@@ -47,6 +47,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* formatting below */
 
+:root {
+  --shadow-color: 0deg 0% 0%;
+  --shadow-elevation-low:
+    1px 1px 2.1px hsl(var(--shadow-color) / 0),
+    3.5px 3.5px 7.4px hsl(var(--shadow-color) / 0.11);
+  --shadow-elevation-medium:
+    1px 1px 2.1px hsl(var(--shadow-color) / 0),
+    17.5px 17.5px 37.1px hsl(var(--shadow-color) / 0.16);
+  --shadow-elevation-high:
+    1px 1px 2.1px hsl(var(--shadow-color) / 0),
+    24.1px 24.1px 51.1px hsl(var(--shadow-color) / 0.13),
+    75px 75px 159.1px hsl(var(--shadow-color) / 0.27);
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -153,8 +167,9 @@ button {
 
 .header {
   grid-area: header;
-  padding: 10px;
   display: grid;
+  box-shadow: var(--shadow-elevation-low);
+  z-index: 0;
 }
 
 ul {
@@ -167,7 +182,7 @@ ul {
   grid-template-columns: auto;
   grid-template-rows: 1fr;
   border-radius: 10px;
-  box-shadow: 1.9px 3.8px 3.8px hsl(0deg 0% 0% / 0.44);
+  box-shadow: var(--shadow-elevation-low);
 }
 
 .trend {
@@ -182,7 +197,7 @@ ul {
 .announcementcontainer {
   background-color: white;
   border-radius: 10px;
-  box-shadow: 1.9px 3.8px 3.8px hsl(0deg 0% 0% / 0.44);
+  box-shadow: var(--shadow-elevation-low);
 }
 
 .announcement {
@@ -203,7 +218,7 @@ ul {
   border-left-color: orange;
   border-left-style: solid;
   padding: 15px;
-  box-shadow: 1.9px 3.8px 3.8px hsl(0deg 0% 0% / 0.44);
+  box-shadow: var(--shadow-elevation-low);
   width: 100%;
 }
 
@@ -298,6 +313,7 @@ ul img {
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
   vertical-align: middle;
+  padding: 10px;
 }
 
 .bottomheader {
@@ -305,7 +321,7 @@ ul img {
   grid-template-columns: auto 2fr 1fr;
   grid-template-rows: auto;
   vertical-align: middle;
-  padding: 20px 0px 0px 30px;
+  padding: 20px 10px 10px 30px;
 }
 
 .bottomheader p {
