@@ -1,0 +1,150 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+/* formatting below */
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  padding: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas:
+  "sidebar header"
+  "sidebar maincontent"
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.maincontent {
+  grid-area: maincontent;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 15px;
+  background-color: rgb(237, 242, 252);
+}
+
+.sidecontent {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 15px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 45px 100px;
+  padding: 15px;
+}
+
+.projectcontainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 15px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: rgb(47, 148, 243);
+  color: white;
+  font-weight: bold;
+  display: grid;
+  grid-template-rows: .1fr 1fr 1fr;
+  justify-items: stretch;
+}
+
+button {
+  background-color: rgb(47, 148, 243);
+  border-radius: 35px;
+  width: 80px;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  height: 35px;
+}
+
+.header {
+  grid-area: header;
+  box-shadow: 5px 10px 8px 10px #888888;
+  padding: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+.trendcontainer {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.announcementcontainer {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.project {
+  background-color: white;
+  border-radius: 10px;
+}
+
+input {
+  background-color: rgb(237, 242, 252);
+  border-radius: 20px;
+  border: none;
+}
