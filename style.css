@@ -1,4 +1,4 @@
-/* 1. Use a more-intuitive box-sizing model */
+/* 1. Use a more intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -8,76 +8,71 @@
   margin: 0;
 }
 
+/* 3. Base styles for body element */
 body {
-  /* 3. Add accessible line-height */
-  line-height: 1.5;
-  /* 4. Improve text rendering */
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.5; /* Add accessible line-height */
+  -webkit-font-smoothing: antialiased; /* Improve text rendering */
+  font-family: "Roboto", sans-serif;
 }
 
-/* 5. Improve media defaults */
+/* 4. Improve media element defaults */
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
 
-/* 6. Inherit fonts for form controls */
+/* 5. Inherit fonts for form controls */
 input, button, textarea, select {
   font: inherit;
 }
 
-/* 7. Avoid text overflows */
+/* 6. Avoid text overflows */
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-/* 8. Improve line wrapping */
+/* 7. Improve text wrapping */
 p {
   text-wrap: pretty;
 }
+
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 
 /*
-  9. Create a root stacking context
+8. Create a root stacking context
 */
 #root, #__next {
   isolation: isolate;
 }
-/* formatting below */
 
+/* 9. CSS Variables and shadows */
 :root {
   --shadow-color: 0deg 0% 0%;
   --shadow-elevation-low:
-    1px 1px 2.1px hsl(var(--shadow-color) / 0),
-    3.5px 3.5px 7.4px hsl(var(--shadow-color) / 0.11);
+      1px 1px 2.1px hsl(var(--shadow-color) / 0),
+      3.5px 3.5px 7.4px hsl(var(--shadow-color) / 0.11);
   --shadow-elevation-medium:
-    1px 1px 2.1px hsl(var(--shadow-color) / 0),
-    17.5px 17.5px 37.1px hsl(var(--shadow-color) / 0.16);
+      1px 1px 2.1px hsl(var(--shadow-color) / 0),
+      17.5px 17.5px 37.1px hsl(var(--shadow-color) / 0.16);
   --shadow-elevation-high:
-    1px 1px 2.1px hsl(var(--shadow-color) / 0),
-    24.1px 24.1px 51.1px hsl(var(--shadow-color) / 0.13),
-    75px 75px 159.1px hsl(var(--shadow-color) / 0.27);
+      1px 1px 2.1px hsl(var(--shadow-color) / 0),
+      24.1px 24.1px 51.1px hsl(var(--shadow-color) / 0.13),
+      75px 75px 159.1px hsl(var(--shadow-color) / 0.27);
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-}
-
-p {
-  
-}
-
+/* 10. Container Layout */
 .container {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
   grid-template-areas:
-  "sidebar header"
-  "sidebar maincontent"
+      "sidebar header"
+      "sidebar maincontent";
 }
 
+/* 11. Main Content Section */
 .maincontent {
   grid-area: maincontent;
   display: grid;
@@ -87,25 +82,25 @@ p {
   background-color: rgb(237, 242, 252);
 }
 
+/* 12. Side Content Section */
 .sidecontent {
   display: grid;
   grid-template-rows: 1fr 1fr;
   padding: 15px;
 }
 
+/* 13. Projects Section */
 .projects {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   padding: 15px;
-
   width: 100%;
   box-sizing: border-box;
-  align-self:start;
+  align-self: start;
 }
 
-
-
+/* 14. Project Container */
 .projectcontainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -114,6 +109,7 @@ p {
   width: 100%;
 }
 
+/* 15. Sidebar Styles */
 .sidebar {
   grid-area: sidebar;
   background-color: rgb(47, 148, 243);
@@ -128,12 +124,14 @@ p {
   max-width: 250px;
 }
 
+/* 16. Logo */
 .logo {
   font-size: 1.5em;
   text-align: center;
   padding: 10px;
 }
 
+/* 17. Navigation and Settings */
 .nav, .settings {
   display: grid;
   gap: 10px;
@@ -149,22 +147,32 @@ p {
   border-radius: 5px;
 }
 
+/* 18. Unordered Lists */
 ul {
   padding: 0;
+  list-style: none;
 }
 
+ul img {
+  filter: invert(1);
+  height: 1.2em;
+  width: auto;
+  vertical-align: middle;
+}
 
+/* 19. Button Styles */
 button {
   background-color: rgb(47, 148, 243);
+  border: none;
   border-radius: 35px;
   width: 80px;
+  height: 35px;
   margin: 10px;
   color: white;
   font-weight: bold;
-  border: none;
-  height: 35px;
 }
 
+/* 20. Header Styles */
 .header {
   grid-area: header;
   display: grid;
@@ -172,10 +180,7 @@ button {
   z-index: 0;
 }
 
-ul {
-  list-style: none;
-}
-
+/* 21. Trend Container and Trend Item */
 .trendcontainer {
   background-color: white;
   display: grid;
@@ -188,12 +193,28 @@ ul {
 .trend {
   padding: 15px;
   display: grid;
-
   grid-template-areas:
-  "profilepic handle"
-  "profilepic headline"
+      "profilepic handle"
+      "profilepic headline";
 }
 
+.trend img {
+  grid-area: profilepic;
+  height: 3.3em;
+  width: auto;
+  align-self: center;
+  margin: auto;
+}
+
+.trend h4 {
+  grid-area: handle;
+}
+
+.trend p {
+  grid-area: headline;
+}
+
+/* 22. Announcement Styles */
 .announcementcontainer {
   background-color: white;
   border-radius: 10px;
@@ -204,6 +225,7 @@ ul {
   padding: 15px;
 }
 
+/* 23. Separator */
 .separator {
   width: 90%;
   background-color: rgb(219, 219, 219);
@@ -211,87 +233,61 @@ ul {
   margin: 10px;
 }
 
+/* 24. Project Card */
 .project {
   background-color: white;
   border-radius: 5px;
-  border-left: 7px;
-  border-left-color: orange;
-  border-left-style: solid;
+  border-left: 7px solid orange;
   padding: 15px;
   box-shadow: var(--shadow-elevation-low);
   width: 100%;
 }
 
 .project p {
-  margin: 0px 15px 15px 15px;
+  margin: 0 15px 15px 15px;
 }
 
 .project img {
-  width: 20px; 
+  width: 20px;
   height: auto;
   display: inline-block;
-  align-content: end;
+  vertical-align: middle;
   margin-right: 5px;
-  vertical-align: middle; 
 }
 
+/* 25. Icon Container */
 .icon-container {
   justify-self: end;
 }
 
+/* 26. Heading Styles */
+h2 {
+  margin: 10px 10px 10px 0;
+}
 
 h3 {
-  margin: 15px 15px 0px 15px;
+  margin: 15px 15px 0 15px;
 }
 
-h2 {
-  margin: 10px 10px 10px 0px;
-}
-
+/* 27. Input Styles */
 input {
   background-color: rgb(237, 242, 252);
-  border-radius: 20px;
   border: none;
+  border-radius: 20px;
   height: 1.5em;
 }
 
-ul img {
-  filter: invert(1);
-  height: 1.2em;
-  width: auto;
-  vertical-align: middle;
-}
-
-.searchbar img {
-  height: 1.5em;
-  width: auto;
-}
-
-.profile img {
-  height: 1.5em;
-  width: auto;
-  align-self: center;
-}
-
-.profilepicture img {
-  height: 3.3em;
-  width: auto;
-  align-self: center;
-  margin: 0px 10px 0px 0px;
-}
-
-.trend img {
-  height: 3.3em;
-  width: auto;
-  align-self: center;
-  margin: auto auto auto auto;
-}
-
+/* 28. Searchbar and Profile */
 .searchbar {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 10px;
   align-self: center;
+}
+
+.searchbar img {
+  height: 1.5em;
+  width: auto;
 }
 
 .profile {
@@ -305,9 +301,23 @@ ul img {
 
 .profile p {
   align-self: center;
-  margin: 0px 15px 0px 0px;
+  margin: 0 15px 0 0;
 }
 
+.profile img {
+  height: 1.5em;
+  width: auto;
+  align-self: center;
+}
+
+.profilepicture img {
+  height: 3.3em;
+  width: auto;
+  align-self: center;
+  margin: 0 10px 0 0;
+}
+
+/* 29. Top and Bottom Header */
 .topheader {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -329,21 +339,10 @@ ul img {
 }
 
 .bottomheader h2 {
-  margin: 0px;
+  margin: 0;
 }
 
-.trend img {
-  grid-area: profilepic;
-}
-
-.trend h4 {
-  grid-area: handle;
-}
-
-.trend p {
-  grid-area: headline;
-}
-
+/* 30. Actions */
 .actions {
   justify-self: end;
 }
